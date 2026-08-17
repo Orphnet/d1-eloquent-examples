@@ -1,0 +1,38 @@
+{
+  "name": "@example/nuxt-workspace",
+  "version": "0.1.0",
+  "description": "d1-eloquent example: workspace platform on Nuxt 4 + Nitro + Cloudflare Pages, with d1-eloquent running directly inside Nitro server routes (no separate API).",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "predev": "bun run scripts/build-source-bundle.ts",
+    "prebuild": "bun run scripts/build-source-bundle.ts",
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "deploy": "nuxt build && wrangler deploy",
+    "source:bundle": "bun run scripts/build-source-bundle.ts",
+    "db:migrate": "d1-eloquent migrate",
+    "db:rollback": "d1-eloquent rollback",
+    "db:fresh": "d1-eloquent fresh --force",
+    "db:status": "d1-eloquent status",
+    "db:make:migration": "d1-eloquent make:migration",
+    "db:generate": "d1-eloquent generate",
+    "features:verify": "bun run scripts/verify-features.ts"
+  },
+  "dependencies": {
+    "@orphnet/d1-eloquent": "^0.1.0-beta.1",
+    "nuxt": "^4.0.0",
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241218.0",
+    "nitro-cloudflare-dev": "^0.2.0",
+    "typescript": "^5.7.2",
+    "wrangler": "^4.17.0"
+  },
+  "engines": {
+    "node": ">=22",
+    "bun": ">=1.1.0"
+  }
+}

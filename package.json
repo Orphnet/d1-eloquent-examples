@@ -1,0 +1,36 @@
+{
+  "name": "@orphnet/d1-eloquent-examples",
+  "version": "0.1.0",
+  "description": "Reference examples for @orphnet/d1-eloquent — multi-tenant workspace platform demonstrating every major ORM feature on Cloudflare D1.",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "bun --filter @example/hono-workspace run dev",
+    "dev:hono": "bun --filter @example/hono-workspace run dev",
+    "build": "bun --filter @example/hono-workspace run build",
+    "test": "bun --filter '*' run test",
+    "db:migrate": "bun --filter @example/hono-workspace run db:migrate",
+    "db:fresh": "bun --filter @example/hono-workspace run db:fresh",
+    "db:seed": "bun --filter @example/hono-workspace run db:seed",
+    "db:status": "bun --filter @example/hono-workspace run db:status",
+    "db:rollback": "bun --filter @example/hono-workspace run db:rollback",
+    "deploy": "bun --filter @example/hono-workspace run deploy",
+    "clean": "rm -rf packages/*/node_modules packages/*/dist packages/*/.wrangler node_modules"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=22",
+    "bun": ">=1.1.0"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/Orphnet/d1-eloquent-examples",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Orphnet/d1-eloquent-examples.git"
+  }
+}

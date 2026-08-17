@@ -1,0 +1,36 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "d1-eloquent-example-nuxt",
+  "main": "./.output/server/index.mjs",
+  "compatibility_date": "2026-05-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "./.output/public/",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  },
+  // Uncomment + adjust the route block once you've attached the custom
+  // domain on your own Cloudflare account (zone must be on the same account).
+  // "routes": [
+  //   { "pattern": "your-subdomain.example.com", "custom_domain": true }
+  // ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "d1-eloquent-example-nuxt",
+      "database_id": "REPLACE_WITH_YOUR_D1_ID",
+      "migrations_dir": "database/migrations"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "CACHE",
+      "id": "REPLACE_WITH_YOUR_KV_ID"
+    }
+  ],
+  "vars": {
+    "APP_NAME": "Workspace (Nuxt)"
+  }
+}

@@ -1,0 +1,4 @@
+# Copy to .dev.vars and adjust. Used by wrangler dev for local secrets.
+
+# Optional: change the app name shown in API responses
+# APP_NAME=Workspace

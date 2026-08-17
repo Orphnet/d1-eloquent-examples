@@ -1,0 +1,24 @@
+node_modules/
+dist/
+.wrangler/
+.DS_Store
+*.log
+
+# Cloudflare D1 local dev DB files
+**/.wrangler/state/
+**/wrangler.local.jsonc
+
+# Environment files
+**/.dev.vars
+**/.dev.vars.local
+
+# Build artifacts
+*.tsbuildinfo
+
+# Coverage
+coverage/
+
+# IDE
+.vscode/
+.idea/
+bun.lock
